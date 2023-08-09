@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'Agrandir';
+  src: url('./assets/fonts/PPAgrandir-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Agrandir';
+  font-weight: bold;
+  src: url('./assets/fonts/PPAgrandirText-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Agrandir';
+  font-weight: bolder;
+  src: url('./assets/fonts/PPAgrandir-GrandHeavy.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Agrandir';
+  font-weight: lighter;
+  src: url('./assets/fonts/PPAgrandir-GrandLight.otf') format('opentype');
+}
+
+.hamburger-menu::after,
+.hamburger-menu::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  background-color: #fff;
+}
+
+.hamburger-menu::after {
+  bottom: -5px;
+}
+
+.hamburger-menu::before {
+  top: -5px;
+}
+
+.hamburger-menu-active::before,
+.hamburger-menu-active::after {
+  width: 22.63px;
+}
+
+.hamburger-menu-active::before {
+  animation: hamburger-menu-before 300ms ease-in-out 100ms 1 forwards;
+}
+
+.hamburger-menu-active::after {
+  animation: hamburger-menu-after 300ms ease-in-out 100ms 1 forwards;
+}
+
+@keyframes hamburger-menu-before {
+  from {
+    transform: rotate(0deg);
+    top: 0px;
+  }
+
+  to {
+    transform: rotate(45deg);
+    top: -1px;
+    left: -2px;
+  }
+}
+
+@keyframes hamburger-menu-after {
+  from {
+    transform: rotate(0deg);
+    bottom: 0px;
+  }
+
+  to {
+    transform: rotate(-45deg);
+    bottom: -1px;
+    left: -2px;
+  }
+}
